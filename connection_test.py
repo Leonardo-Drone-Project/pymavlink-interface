@@ -2,12 +2,16 @@ from pymavlink import mavutil
 
 # connect to the jetson's serial port
 master = mavutil.mavlink_connection('/dev/ttyTHS1', baud=57600)
-master.wait_heartbeat()
+msg = master.wait_heartbeat(timeout=10)
 
-# 3 = ArduPilot, 12 = PX4
-if master.target_autopilot == 3:
-    print("ardupilot")
-elif master.target_autopilot == 12:
-    print("PX4")
+if msg is None:
+    print("no heartbeat")
 else:
-    print(f"unknown firmware ID: {master.target_autopilot}")
+    print("yes heartbeat")
+    if msg.autopilot == 3:
+        print ("ardupilot")
+    elif msg.autopilot ==12:
+        print("px4")
+    else:
+        print("unknown")
+    
