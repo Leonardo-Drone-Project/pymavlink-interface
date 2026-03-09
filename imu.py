@@ -8,6 +8,15 @@ if not fc.wait_heartbeat(timeout=10):
 else: 
     print("recieved heartbeat")
 
+# Request HIGHRES_IMU (Message ID 105) at 10Hz (100,000 microseconds)
+fc.mav.command_long_send(
+    fc.target_system, fc.target_component,
+    mavutil.mavlink.MAV_CMD_SET_MESSAGE_INTERVAL, 0,
+    105, # Message ID for HIGHRES_IMU
+    100000, # Interval in microseconds (10Hz)
+    0, 0, 0, 0, 0
+)
+
 while True:
     # wait for highres_imu packet
     msg = fc.recv_match(type='HIGHRES_IMU', blocking=True)
@@ -19,3 +28,5 @@ while True:
         temp = round(msg.temperature, 1)
         
         print(f"Forward Accel: {x_accel} m/s² | Yaw Spin: {z_gyro} rad/s | Temp: {temp}°C")
+    else:
+        print("waiting for imu packet")
