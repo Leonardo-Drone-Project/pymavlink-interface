@@ -1,4 +1,4 @@
-#!/home/mastlabjetson2/Code/pymavlink-interface/linux_venv/bin/python3
+#!/home/weinkyls/Documents/pymavlink-interface/linux_venv/bin/python
 
 '''
 extract ISBH and ISBD messages from AP_Logging files and produce FFT plots

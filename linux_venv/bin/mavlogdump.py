@@ -1,4 +1,4 @@
-#!/home/mastlabjetson2/Code/pymavlink-interface/linux_venv/bin/python3
+#!/home/weinkyls/Documents/pymavlink-interface/linux_venv/bin/python
 
 '''
 example program that dumps a Mavlink log file. The log file is

@@ -1,4 +1,4 @@
-#!/home/mastlabjetson2/Code/pymavlink-interface/linux_venv/bin/python3
+#!/home/weinkyls/Documents/pymavlink-interface/linux_venv/bin/python
 '''
 graph a MAVLink log file
 Andrew Tridgell August 2011

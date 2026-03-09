@@ -1,4 +1,4 @@
-#!/home/mastlabjetson2/Code/pymavlink-interface/linux_venv/bin/python3
+#!/home/weinkyls/Documents/pymavlink-interface/linux_venv/bin/python
 
 '''
 Summarize MAVLink logs. Useful for identifying which log is of interest in a large set.
