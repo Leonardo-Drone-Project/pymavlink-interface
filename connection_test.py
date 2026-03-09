@@ -1,7 +1,7 @@
 from pymavlink import mavutil
 
 # connect to the jetson's serial port
-master = mavutil.mavlink_connection('/dev/ttyTHS1', baud=115200)
+master = mavutil.mavlink_connection('/dev/ttyTHS1', baud=57600)
 master.wait_heartbeat()
 
 # 3 = ArduPilot, 12 = PX4
