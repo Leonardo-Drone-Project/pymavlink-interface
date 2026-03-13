@@ -2,8 +2,8 @@ from pymavlink import mavutil
 
 # test3
 # connect to the jetson's serial port
-master = mavutil.mavlink_connection('/dev/ttyTHS1', baud=57600)
-msg = master.wait_heartbeat(timeout=10)
+fc = mavutil.mavlink_connection('/dev/ttyTHS1', baud=57600)
+msg = fc.wait_heartbeat(timeout=10)
 
 if msg is None:
     print("no heartbeat")
